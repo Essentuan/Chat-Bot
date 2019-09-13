@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/req/style.css">
+<script src="Geoff.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+#messages {
+    overflow-y: auto;
+}
+</style>
+<div class="card center-hz" style="margin-top: 10px; width: 80%; height: 80%">
+    <div class="card-body" id="messages">
+    </div>
+</div>
+<div class="input-group mb-3 center-hz bottom" style="width: 75%">
+    <input type="text" placeholder="Message for Geoff" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="message">
+</div>
+<script>
+var objDiv = document.getElementById("messages");
+objDiv.scrollTop = objDiv.scrollHeight;
+document.onkeypress = function (e) {
+    if (event.keyCode === 13 && $("#message").is(':focus')) {
+        addMessage($("#message").val(), "You")
+        $("#message").val("")
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+};
+</script>       
