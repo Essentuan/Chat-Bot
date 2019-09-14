@@ -20,7 +20,7 @@
 var objDiv = document.getElementById("messages");
 objDiv.scrollTop = objDiv.scrollHeight;
 document.onkeypress = function (e) {
-    if (event.keyCode === 13 && $("#message").is(':focus')) {
+    if (event.keyCode === 13 && $("#message").is(':focus') && $("#message").val().length > 0) {
         addMessage($("#message").val(), "You")
         $("#message").val("")
         objDiv.scrollTop = objDiv.scrollHeight;
